@@ -1,1 +1,1 @@
-# SampleBlog
+# SimpleBlog
