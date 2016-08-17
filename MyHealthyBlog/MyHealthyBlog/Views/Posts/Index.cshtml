@@ -1,4 +1,6 @@
-﻿@model IEnumerable<MyHealthyBlog.Models.Post>
+﻿@using MyHealthyBlog.Classes
+
+@model IEnumerable<MyHealthyBlog.Models.Post>
 
 @{
     ViewBag.Title = "Index";
@@ -12,15 +14,20 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            Заглавие
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Body)
+            Съдържание
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+           Дата
         </th>
-        <th></th>
+        <th>
+            Автор
+        </th>
+        <th>
+            Действия
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -29,10 +36,21 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Body)
+            @Utils.CutText(item.Body)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+          @if (item.Author != null)
+          {
+              @item.Author.UserName
+          }
+          else
+          {
+               @:<i>няма автор </i>               
+          }
+          
         </td>
         <td>
             @Html.ActionLink("редакция", "Edit", new { id=item.Id }) |

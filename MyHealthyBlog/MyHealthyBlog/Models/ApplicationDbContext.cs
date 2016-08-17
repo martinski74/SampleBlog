@@ -6,10 +6,12 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MyHealthyBlog.Models
 {
-   
   
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -20,6 +22,6 @@ namespace MyHealthyBlog.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<MyHealthyBlog.Models.Post> Posts { get; set; }
+       
     }
 }

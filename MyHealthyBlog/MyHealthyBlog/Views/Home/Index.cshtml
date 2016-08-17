@@ -8,10 +8,11 @@
         <article class="post col-md-6">
             <h2 class="title">@post.Title</h2>
             <div class="about">
-                Публикувано
+                Публикувано 
                 @if (post.Author != null)
                 {
-                    @:от <i>@post.Author.FullName (@post.Author.UserName) </i>;
+                    @:от
+                     <i>@post.Author.FullName (@post.Author.UserName) </i>;
                 }
                 на <i>@post.Date</i>
             </div>

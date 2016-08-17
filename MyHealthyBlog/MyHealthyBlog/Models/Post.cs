@@ -9,14 +9,20 @@ namespace MyHealthyBlog.Models
 {
     public class Post
     {
+        public Post()
+        {
+            this.Date = DateTime.Now;
+        }
+
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [StringLength(200)]
+        [StringLength(250)]
         public string Title { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Body { get; set; }
 
         [Required]
@@ -24,7 +30,10 @@ namespace MyHealthyBlog.Models
 
         public string Author_Id { get; set; }
         [ForeignKey("Author_Id")]
+
         public ApplicationUser Author { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }
