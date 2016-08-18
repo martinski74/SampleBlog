@@ -81,6 +81,8 @@ namespace MyHealthyBlog.Controllers
             {
                 return HttpNotFound();
             }
+            var authors = db.Users.ToList();
+            ViewBag.Authors = authors;
             return View(post);
         }
 
@@ -90,7 +92,7 @@ namespace MyHealthyBlog.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrators")]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,Date")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,Date,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
             {

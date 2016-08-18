@@ -18,7 +18,7 @@ namespace MyHealthyBlog.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(250)]
+        [StringLength(200)]
         public string Title { get; set; }
 
         [Required]
@@ -28,7 +28,10 @@ namespace MyHealthyBlog.Models
         [Required]
         public DateTime Date { get; set; }
 
+
+        
         public string Author_Id { get; set; }
+
         [ForeignKey("Author_Id")]
 
         public ApplicationUser Author { get; set; }
