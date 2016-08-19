@@ -56,17 +56,6 @@ namespace MyHealthyBlog.Migrations
                     date: new DateTime(2016, 03, 27, 17, 53, 48),
                     authorUsername: "merry@gmail.com"
                 );
-
-                CreatePost(context,
-                    title: "Rogue Wave Updates Zend Framework",
-                    body: @"<p>Rogue Wave is updating its open-source framework for developing Web applications and services. According to the company, this is the first major release in four years. Zend Framework 3 features support for PHP 7, middleware runtime and performance enhancements.</p>
-                    <p>The newly released support for PHP 7 aims to simplify how developers create, debug, monitor and deploy modern Web and mobile apps in PHP 7. “This is an exciting time to be a PHP developer,” said Zeev Suraski, cofounder of Zend and CTO of Rogue Wave. “With Zend Framework 3, we’re continuing our quest to make creating PHP applications simpler, more accessible and faster.”</p>
-                    <p>In addition, version 3 of the framework features an architectural structure that allows developers to use components within Zend Framework apps or any other framework in order to reduce dependencies, and to enable reuse within the PHP ecosystem.</p>
-                    <p>Another key update to the solution is a new middleware runtime. Expressive is designed to focus on simplicity and interoperability, and it enables developers to customize their solutions.</p>
-                    ",
-                    date: new DateTime(2016, 06, 30, 17, 36, 52),
-                    authorUsername: "merry@gmail.com"
-                );
                 
                 context.SaveChanges();
             }

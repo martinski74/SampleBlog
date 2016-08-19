@@ -4,7 +4,7 @@
 @model IEnumerable<MyHealthyBlog.Models.Post>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Статии";
 }
 
 <h2>Статии</h2>
@@ -21,7 +21,7 @@
             Съдържание
         </th>
         <th>
-           Дата
+            Дата
         </th>
         <th>
             Автор
@@ -29,43 +29,43 @@
         <th>
             Действия
         </th>
+        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Utils.CutText(item.Body)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-          @if (item.Author != null)
-          {
-              @item.Author.UserName
-          }
-          else
-          {
-               @:<i>няма автор </i>               
-          }
-          
-        </td>
-        <td>
-            @if (User.IsInRole("Administrators"))
-            {
-                @Html.ActionLink("редакция", "Edit", new {id = item.Id}) @:|
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Utils.CutText(item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @if (item.Author.FullName == null)
+                {
+                    <i>няма автор</i>
+                }
+
+                @Html.DisplayFor(modelItem => item.Author.FullName)
+
+            </td>
+            <td>
+                @if (User.IsInRole("Administrators"))
+                {
+                    @Html.ActionLink("редакция", "Edit", new { id = item.Id }) @:|
             }
-            @Html.ActionLink("детайли", "Details", new {id = item.Id}) 
-            @if (User.IsInRole("Administrators"))
-            {
-               @:| @Html.ActionLink("изтрий", "Delete", new { id = item.Id })
+                @Html.ActionLink("детайли", "Details", new { id = item.Id })
+                @if (User.IsInRole("Administrators"))
+                {
+                    @:| @Html.ActionLink("изтрий", "Delete", new { id = item.Id })
             }
-           
-        </td>
-    </tr>
-}
+
+            </td>
+        </tr>
+    }
 
 </table>
