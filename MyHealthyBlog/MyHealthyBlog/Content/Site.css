@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background: #e6e6fa;
+    background-image: url(/Content/images/images.jpg);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,10 +24,11 @@ textarea {
     max-width: 280px;
 }
 .post>h2, .post>div {
-    background: rgba(0,255,0,0.5);
+   /* background: rgba(0,255,0,0.3);*/
     padding: 10px;
     margin: 0;
 }
+ 
 .post>h2 {
     margin-top: 20px;
 }
@@ -37,4 +38,34 @@ footer {
 .img:target {
     background-color: #228b22;
     
+}
+.navbar {
+    background-image: url(/Content/images/images1.jpg);
+    background-repeat: repeat-x;
+    
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #00bfff;
+}
+.body-content {
+    background: rgba(0,255,0,0.5); 
+    color: white;
+}
+.table:last-of-type td>a {
+    color: #ffffe0;
+}
+.container:first-of-type p>a {
+    color: #ffffe0;
+}
+.table>tbody {
+    background: rgba(0,255,0,0); 
+}
+.container:last-of-type a {
+    color: #ffffe0;
+}
+.row>span {
+    ma
 }

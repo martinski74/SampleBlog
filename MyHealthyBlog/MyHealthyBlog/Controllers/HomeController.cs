@@ -12,7 +12,8 @@ namespace MyHealthyBlog.Controllers
         public ActionResult Index()
         {
             var db =new ApplicationDbContext();
-            var post = db.Posts.OrderByDescending(p => p.Date).Take(3);
+            var post = db.Posts.OrderByDescending(p => p.Date).Take(4);
+            
             return View(post.ToList());
         }
       
