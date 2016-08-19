@@ -66,6 +66,7 @@ footer {
 .container:last-of-type a {
     color: #ffffe0;
 }
-.row>span {
-    ma
+select {
+    color: black;
 }
+   
