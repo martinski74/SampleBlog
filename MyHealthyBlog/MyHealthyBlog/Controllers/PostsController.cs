@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MyHealthyBlog.Extensions;
 using MyHealthyBlog.Models;
 
 namespace MyHealthyBlog.Controllers
@@ -62,6 +63,7 @@ namespace MyHealthyBlog.Controllers
                 post.Date = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
+                this.AddNotification("Постът е създаден.",NotificationType.INFO);
                 return RedirectToAction("Index");
             }
 

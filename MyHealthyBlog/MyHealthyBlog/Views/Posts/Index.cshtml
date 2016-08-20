@@ -29,7 +29,7 @@
         <th>
             Действия
         </th>
-        <th></th>
+        
     </tr>
 
     @foreach (var item in Model)
@@ -42,7 +42,7 @@
                 @Utils.CutText(item.Body)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
                 @if (item.Author.FullName == null)

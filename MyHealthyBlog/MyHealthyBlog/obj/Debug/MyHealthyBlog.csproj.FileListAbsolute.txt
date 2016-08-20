@@ -52,3 +52,4 @@ F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\bin\Microsoft.Owin.Security.Twitter.xm
 F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.dll
 F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.pdb
+F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.csprojResolveAssemblyReference.cache

@@ -42,9 +42,12 @@ label.tog > input{
 }
 label.tog > span{
 	display:inline-block;
-	width:35px;
-	height:35px;
+	width:30px;
+	height:30px;
 	background: url("/Content/images/like-button.png") no-repeat 50% 50% / cover;
+}
+label.tog > span:hover {
+    cursor: pointer;
 }
 label.tog > input:checked + span{
 	background-image: url("/Content/images/ball.png");
@@ -86,5 +89,8 @@ label.tog > input:checked + span{
 }
 select {
     color: black;
+}
+audio {
+    margin-top: 10px;
 }
    
