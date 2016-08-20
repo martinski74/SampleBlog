@@ -7,17 +7,26 @@
     @foreach (var post in Model)
     {
         <article class="post col-md-6">
-            <h2 class="title"><a href="/Posts/Details/@post.Id">@post.Title</a></h2>
+            <h2 class="title">
+                <a href="/Posts/Details/@post.Id">@post.Title</a>
+            </h2>
             <div class="about">
-                Публикувано 
+                Публикувано
                 @if (post.Author != null)
                 {
                     @:от <i>@post.Author.FullName (@post.Author.UserName) </i>;
                 }
                 на <i>@post.Date</i>
             </div>
-            <div class="body">@MyHealthyBlog.Classes.Utils.CutText(post.Body,350)</div>
-            <div class="img"><a href=""><img src="/Content/images/like.png" width="35" height="35" /></a><span>Коментар</span></div>
+            <div class="body">@MyHealthyBlog.Classes.Utils.CutText(post.Body, 350)</div>
+            <label class="tog">
+                <input type="checkbox">
+                <span></span>
+            </label>
+      
         </article>
     }
 </section>
+<script>
+   
+</script>

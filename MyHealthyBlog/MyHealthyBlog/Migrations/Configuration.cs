@@ -19,7 +19,7 @@ namespace MyHealthyBlog.Migrations
 
         protected override void Seed(MyHealthyBlog.Models.ApplicationDbContext context)
         {
-                       if (! context.Users.Any())
+            if (!context.Users.Any())
             {
                 // If the database is empty, populate sample data in it
 
@@ -56,7 +56,7 @@ namespace MyHealthyBlog.Migrations
                     date: new DateTime(2016, 03, 27, 17, 53, 48),
                     authorUsername: "merry@gmail.com"
                 );
-                
+
                 context.SaveChanges();
             }
         }
@@ -125,5 +125,5 @@ namespace MyHealthyBlog.Migrations
     }
 }
 
-    
+
 
