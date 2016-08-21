@@ -34,14 +34,21 @@
         <source src="/Content/music/Bird-music.mp3" type="audio/mpeg">
     </audio>
 
-<div class="container body-content">
-    @Html.Partial("_Notifications")
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p>&copy; @DateTime.Now.Year - Здравословен Блог</p>
-    </footer>
-</div>
+    <div class="container body-content">
+        @Html.Partial("_Notifications")
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>
+                &copy; @DateTime.Now.Year - Здравословен Блог
+                <a href="https:\\facebook.com"target="_blank"><img src="/Content/images/facebook-logo-png-9.png" /></a>
+                <a href="https://github.com/martinski74/SampleBlog" target="_blank"><img src="/Content/images/index.png" /></a>
+                <a href="https://twitter.com/" target="_blamk"><img src="/Content/images/twitter_3.png" /></a>
+            </p>
+
+
+        </footer>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
