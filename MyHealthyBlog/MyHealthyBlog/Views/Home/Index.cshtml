@@ -3,7 +3,11 @@
 @model List<MyHealthyBlog.Models.Post>
 
 
+
+
 <section class="row">
+    
+
     @foreach (var post in Model)
     {
         <article class="post col-md-6">
@@ -23,10 +27,18 @@
                 <input type="checkbox">
                 <span></span>
             </label>
-      
+
         </article>
     }
+    <aside class="sidebar">
+        <h3>Последни публикации</h3>
+        @foreach (var post in Model)
+        {
+            <a href="/Posts/Details/@post.Id">@post.Title</a>
+        }
+    </aside>
+
 </section>
-<script>
+
    
-</script>
+
