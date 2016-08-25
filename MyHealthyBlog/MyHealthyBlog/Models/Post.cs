@@ -39,5 +39,7 @@ namespace MyHealthyBlog.Models
 
         public ICollection<Comment> Comments { get; set; }
 
+        public int? ComentsCount { get; set; }
+
     }
 }

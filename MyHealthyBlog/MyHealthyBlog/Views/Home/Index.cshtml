@@ -3,8 +3,6 @@
 @model List<MyHealthyBlog.Models.Post>
 
 
-
-
 <section class="row">
     
 
@@ -34,7 +32,7 @@
         <h3>Последни публикации</h3>
         @foreach (var post in Model)
         {
-            <a href="/Posts/Details/@post.Id">@post.Title</a>
+            <p><a href="/Posts/Details/@post.Id">@post.Title</a></p>
         }
     </aside>
 

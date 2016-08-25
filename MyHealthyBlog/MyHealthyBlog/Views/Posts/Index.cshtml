@@ -27,6 +27,9 @@
             Автор
         </th>
         <th>
+            Коментари
+        </th>
+        <th>
             Действия
         </th>
         
@@ -52,6 +55,9 @@
 
                 @Html.DisplayFor(modelItem => item.Author.FullName)
 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComentsCount)
             </td>
             <td>
                 @if (User.IsInRole("Administrators") ||(item.Author!= null && User.Identity.Name == item.Author.UserName))

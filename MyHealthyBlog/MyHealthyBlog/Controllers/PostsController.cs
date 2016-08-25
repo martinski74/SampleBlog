@@ -54,12 +54,16 @@ namespace MyHealthyBlog.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Body,ComentsCount")] Post post)
         {
+           
+            
             if (ModelState.IsValid)
             {
+                
                 post.Author = db.Users
                     .FirstOrDefault(u => u.UserName == User.Identity.Name);
+                
                 post.Date = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
