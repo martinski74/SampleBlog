@@ -54,16 +54,14 @@ namespace MyHealthyBlog.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,ComentsCount")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Body")] Post post)
         {
-           
             
             if (ModelState.IsValid)
             {
-                
+               
                 post.Author = db.Users
                     .FirstOrDefault(u => u.UserName == User.Identity.Name);
-                
                 post.Date = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
@@ -103,6 +101,7 @@ namespace MyHealthyBlog.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;
+                this.AddNotification("Постът е редактиран.", NotificationType.INFO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -133,6 +132,7 @@ namespace MyHealthyBlog.Controllers
         {
             Post post = db.Posts.Find(id);
             db.Posts.Remove(post);
+            this.AddNotification("Постът е изтрит!", NotificationType.INFO);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
