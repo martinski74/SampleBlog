@@ -184,7 +184,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\ball.png" />
+    <Content Include="Content\images\comment-icon.png" />
+    <Content Include="Content\images\comment.jpg" />
     <Content Include="Content\images\facebook-logo-png-9.png" />
+    <Content Include="Content\images\hipchat-icon-100043057-medium.png" />
+    <Content Include="Content\images\hrana-temperatura.png" />
     <Content Include="Content\images\images.jpg" />
     <Content Include="Content\images\images1.jpg" />
     <Content Include="Content\images\index.png" />
@@ -192,6 +196,7 @@
     <Content Include="Content\images\like.png" />
     <Content Include="Content\images\nature.png" />
     <Content Include="Content\images\nature1.png" />
+    <Content Include="Content\images\talk.png" />
     <Content Include="Content\images\twitter_3.png" />
     <Content Include="Content\music\Bird-music.mp3" />
     <Content Include="Content\music\Forest-at-night.mp3" />
@@ -265,6 +270,7 @@
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Shared\_Notifications.cshtml" />
+    <Content Include="Views\Posts\Comments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

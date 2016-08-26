@@ -1,11 +1,11 @@
 ﻿@{ViewBag.Title = "Начална страница";}
 
+@using System.Web.UI.WebControls
 @model List<MyHealthyBlog.Models.Post>
 
 
 <section class="row">
     
-
     @foreach (var post in Model)
     {
         <article class="post col-md-6">
@@ -21,12 +21,16 @@
                 на <i>@post.Date</i>
             </div>
             <div class="body">@Html.Raw(post.Body)</div>
+            <hr style="margin-top: 5px;" />
             <label class="tog">
                 <input type="checkbox">
-                <span></span>
-            </label>
-
+                <span></span>  
+                <a href="/Posts/Comments">Добавете коментар<img src="/Content/images/hipchat-icon-100043057-medium.png"/></a>
+            </label><hr style="margin-top: 5px;" />
+            @*<div class="comment">@Html.Raw(post.Comments)</div>*@
+            
         </article>
+        
     }
     <aside class="sidebar">
         <h3>Последни публикации</h3>

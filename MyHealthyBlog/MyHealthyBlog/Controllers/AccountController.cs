@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using MyHealthyBlog.Extensions;
 using MyHealthyBlog.Models;
 
 namespace MyHealthyBlog.Controllers
@@ -79,6 +80,7 @@ namespace MyHealthyBlog.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    this.AddNotification("Успешен вход.", NotificationType.INFO);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -156,6 +158,7 @@ namespace MyHealthyBlog.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    this.AddNotification("Успешна регистрация.", NotificationType.INFO);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -392,6 +395,7 @@ namespace MyHealthyBlog.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            this.AddNotification("Излязохте успешно.", NotificationType.INFO);
             return RedirectToAction("Index", "Home");
         }
 

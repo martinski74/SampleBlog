@@ -26,9 +26,7 @@
         <th>
             Автор
         </th>
-        <th>
-            Коментари
-        </th>
+        
         <th>
             Действия
         </th>
@@ -50,15 +48,13 @@
             <td>
                 @if (item.Author.FullName == null)
                 {
-                    <i>няма автор</i>
+                    <i>(няма автор)</i>
                 }
 
                 @Html.DisplayFor(modelItem => item.Author.FullName)
 
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ComentsCount)
-            </td>
+           
             <td>
                 @if (User.IsInRole("Administrators") ||(item.Author!= null && User.Identity.Name == item.Author.UserName))
                 {

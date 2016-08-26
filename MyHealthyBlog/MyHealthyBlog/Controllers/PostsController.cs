@@ -72,6 +72,33 @@ namespace MyHealthyBlog.Controllers
             return View(post);
         }
 
+        [Authorize]
+        public ActionResult Comments()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Comments([Bind(Include = "Id,Title,Body")] Post post)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                post.Author = db.Users
+                    .FirstOrDefault(u => u.UserName == User.Identity.Name);
+                post.Date = DateTime.Now;
+                db.Posts.Add(post);
+                db.SaveChanges();
+                this.AddNotification("Постът е създаден.", NotificationType.INFO);
+                return RedirectToAction("Index");
+            }
+
+            return View(post);
+        }
+
         // GET: Posts/Edit/5
         [Authorize]
         public ActionResult Edit(int? id)
