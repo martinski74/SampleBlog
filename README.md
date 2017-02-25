@@ -1,1 +1,1 @@
-# SimpleBlog
+# SimpleBlog  ASP.NET MVC used
