@@ -53,3 +53,4 @@ F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\bin\Microsoft.Owin.Security.MicrosoftA
 F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.dll
 F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.pdb
 F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.csprojResolveAssemblyReference.cache
+F:\SampleBlog\MyHealthyBlog\MyHealthyBlog\obj\Debug\MyHealthyBlog.csproj.CoreCompileInputs.cache

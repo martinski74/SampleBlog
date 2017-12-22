@@ -71,13 +71,13 @@ namespace MyHealthyBlog.Controllers
 
             return View(post);
         }
-
+        //GET: Comments
         [Authorize]
         public ActionResult Comments()
         {
             return View();
         }
-
+        //POST: Comments
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
